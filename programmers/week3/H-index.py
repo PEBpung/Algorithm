@@ -14,3 +14,17 @@ H-Index는 과학자의 생산성과 영향력을 나타내는 지표입니다. 
 citations	         return
 [3, 0, 6, 1, 5]	   3
 '''
+def solution(citations):
+    answer = 0
+    # 인용 횟수를 내림차순으로 정렬한다.
+    citations.sort(reverse=True)
+    # 인용 횟수가 idx보다 클 때의 최대 idx를 찾는다.
+    for idx, cit in enumerate(citations):
+        if cit > idx:
+            answer = idx+1
+            continue
+        else: break
+    return answer
+
+citations = [3, 0, 6, 1, 5]
+solution(citations)
