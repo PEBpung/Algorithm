@@ -19,9 +19,26 @@ answers	      return
 [1,3,2,4,2]	  [1,2,3]
 
 '''
-count = {1:0, 2:1, 3:0, 4:1}
-r = []
-for i in range(4):
-    if list(count.values())[i] == 1:
-        r.append(list(count.keys())[i])
-print(r)
+import numpy as np
+
+def solution(answers):
+    answer = []
+    supo = [[1, 2, 3, 4, 5],
+                [2, 1, 2, 3, 2, 4, 2, 5],
+                [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]]
+    whol = []
+    count = {1:0, 2:0, 3:0}
+    for i in range(len(supo)):
+        iter = []
+        for k in range(len(answers)):
+            iter.append(supo[i][k%len(supo[i])])
+        whol.append(iter)
+
+        count[i]= ((np.array(answers) - np.array(whol[i])).tolist().count(0))
+    avg = sum(count.values()) / len(count)
+
+    for i in range(len(supo)):
+        if list(count.values())[i] >= avg:
+            answer.append(list(count.keys())[i])
+answers =  [1,3,2,4,2, 4,1, 2]
+solution(answers)
