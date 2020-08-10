@@ -18,8 +18,6 @@ def solution(seoul):
         if find == "Kim":
             return print("김서방은 {}에 있다".format(i))
 
-remain, quot = len([1, 2, 3, 4, 5]) / 2
 
-print(remain, quot)
 seoul = ['Jane', 'Kim']
 solution(seoul)
