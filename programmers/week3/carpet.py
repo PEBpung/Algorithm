@@ -23,6 +23,7 @@ import numpy as np
 def solution(brown, yellow):
     answer = []
     totall = brown + yellow
+    result = 1
     for quot in range(1, totall):
         if totall % quot == 0:
             if totall // quot > quot:
@@ -31,7 +32,8 @@ def solution(brown, yellow):
                 result = quot
                 break
     answer = [result, int(totall/result)]
-    print(answer)
+
+    return answer
 
 brown = 24
 yellow = 24
