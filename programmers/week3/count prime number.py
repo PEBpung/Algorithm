@@ -22,6 +22,7 @@ def solution(n):
                 arr.remove(num)
                 break
         prime = prime + arr
+
     return len(list(set(prime)))
 
 n = 20
