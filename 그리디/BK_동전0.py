@@ -1,5 +1,6 @@
 '''
 https://www.acmicpc.net/problem/11047
+
 예제에 없는 case를 고려하지 못함
 여러줄 입력 받는 방법 [int(input()) for _ in range(n)]
 '''
