@@ -14,8 +14,8 @@ def BFS(board, x, y):
     :param y: 노드의 y 방향
     :return: 최소 이동 거리 
     '''
-    queue = [(x, y, 1)] # 노드 x, 노드 y, 이동 거리
     visit = {(x, y), } # 방문한 노드 저장
+    queue = [(x, y, 1)] # 노드 x, 노드 y, 이동 거리
 
     while queue:
         x, y, distance = queue.pop(0)
