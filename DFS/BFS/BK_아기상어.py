@@ -4,6 +4,8 @@ https://www.acmicpc.net/problem/16236
 처음에는 deque를 사용해서 sort를 했으나, heapq로 변경.
 방문여부(visit)을 set로 사용하니까 틀림. [False, True] 로 변경후 통과
 BFS를 응용한 문제라서 어려웠던 것 같다. 
+
+https://vipeveloper.tistory.com/162[참고]
 '''
 from heapq import heappush, heappop
 
