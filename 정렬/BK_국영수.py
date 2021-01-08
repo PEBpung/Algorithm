@@ -10,10 +10,12 @@ input = sys.stdin.readline
 n = int(input())
 student = []
 
+# 과목 별로 input 나눔
 for _ in range(n):
     [name, kor, eng, math] = map(str, input().split()) 
     student.append([name, int(kor), int(eng), int(math)])
 
+# sorted 함수를 사용해서 정렬 순서 지정
 student = sorted(student, key=lambda x: (-x[1], x[2], -x[3], x[0]))
 
 for s in student:
