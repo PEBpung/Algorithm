@@ -16,12 +16,41 @@ N이 주어질 때, 길이가 N인 계단 수가 총 몇 개 있는지 구하는
 출력
 첫째 줄에 정답을 1,000,000,000으로 나눈 나머지를 출력한다.
 
-예제 입력 1 
+입력 
 1
-예제 출력 1 
+출력 
 9
-예제 입력 2 
+입력 2 
 2
-예제 출력 2 
+출력 2 
 17
 '''
+dp = []
+dp.append([1 for _ in range(10)])
+for _ in range(99):
+    dp.append([0 for _ in range(10)])
+
+n = int(input())
+
+for i in range(n):
+    for j in range(10):
+        if j >= 1:
+            dp[i+1][j-1] += dp[i][j]
+        if j <= 8:
+            dp[i+1][j+1] += dp[i][j]
+
+print((sum(dp[n-1])-dp[n-1][0]) % 1000000000)
+
+
+
+'''n = int(input())
+
+dp = [0]*100
+
+dp[1] = 9
+dp[2] = 17
+
+for i in range(3, n+1):
+    dp[i] = (dp[i-1]-(i-2))*2 + (i-2)
+
+print(dp[n] % 1000000000)'''
