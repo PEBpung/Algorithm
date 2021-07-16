@@ -1,6 +1,6 @@
 class MyError(Exception):
     def __str__(self):
-        return '입련된 b는 4의 배수가 아닙니다.'
+        return '입력된 b는 4의 배수가 아닙니다.'
 
 try:
     print('w, h, b 순으로 입력 하시오.')
