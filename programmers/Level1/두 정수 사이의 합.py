@@ -11,6 +11,7 @@ import sys
 input = sys.stdin.readline
 
 def solution(a, b):
+    a, b = sorted([a, b])
     answer = sum(range(a, b + 1))
     return answer
 
