@@ -9,14 +9,14 @@ def Implement(sentence):
     ans =[0, 0, 0, 0]
 
     for s in sentence:
-            if s.islower():
-                ans[0] += 1
-            elif s.isupper():
-                ans[1] += 1
-            elif s.isdigit():
-                ans[2] += 1
-            elif s == ' ':
-                ans[3] += 1
+        if s.islower():
+            ans[0] += 1
+        elif s.isupper():
+            ans[1] += 1
+        elif s.isdigit():
+            ans[2] += 1
+        elif s == ' ':
+            ans[3] += 1
 
     return ' '.join(map(str, ans))
 
