@@ -10,7 +10,6 @@ s	return
 '''
 
 def solution(s):
-    mid, rmd = divmod(len(s), 2)
     answer = [s[mid] if rmd else s[mid-1:mid+1]]
     return answer[0]
 
