@@ -7,3 +7,4 @@ def solution(arr, divisor):
     if not answer:
         return [-1]
     return sorted(answer)
+    # return arr if len(arr) != 0 else [-1];
