@@ -17,10 +17,3 @@ def solution(n):
     return ''.join(answer)
 
 n = int(input())
-import itertools
-
-def solution(n):
-    it = itertools.cycle(['수', '박'])
-    answer = [next(it) for _ in range(n)]
-    return ''.join(answer)
-print(solution(n))
