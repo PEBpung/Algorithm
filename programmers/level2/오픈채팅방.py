@@ -10,29 +10,24 @@ result
 
 
 def solution(records):
-    answer = []
-    user_list = {}
-
-    def enter(user, name):
-        answer.append(f'{name}님이 들어왔습니다.')
-        user_list[user] = name
-
-    def leave(user):
-        answer.append(f'{user_list[user]}님이 나갔습니다.')
-        del user_list[user]
-
-    def change(user, name):
-        pass
-
+    answer, log, user_list = [], [], {}
+    printer = ['님이 나갔습니다.', '님이 들어왔습니다.']
+    
     for record in records:
         arg, *other = record.split()
+        user = other[0]
 
-        if arg == 'Enter':
-            enter(other[0], other[1])
-        elif arg == 'Leave':
-            leave(other[0])
-        elif arg == 'Change':
-            change(other[0], other[1])
+        if arg == 'Leave':
+            log.append((0, user))
+        else:
+            if arg == 'Enter':
+                log.append((1, user))
+            user_list[user] = other[1]
+    
+    for l in log:
+        i, user = l
+        answer.append(user_list[user] + printer[i])
+        
     return answer
 
 records = ["Enter uid1234 Muzi", "Enter uid4567 Prodo", "Leave uid1234", "Enter uid1234 Prodo", "Change uid4567 Ryan"]
