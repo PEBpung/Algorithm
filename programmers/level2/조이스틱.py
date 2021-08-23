@@ -1,6 +1,11 @@
 '''
-https://programmers.co.kr/learn/courses/30/lessons/42860#
-테스트 케이스 11 때문에 틀렸던 문제.
+https://programmers.co.kr/learn/courses/30/lessons/42860
+
+sudo 코드
+1. A와 Z 방향 중 최소 개수를 구함
+    ex> JEROEN -> 9,4,9,12,4,13
+2. 왼쪽으로 진행하는 게 빠른지 오른쪽으로 진행하는 게 빠른지 check
+3. 빠른 방향으로 이동을 하고 answer에 간 만큼 더함
 '''
 
 def solution(name):
@@ -24,3 +29,6 @@ def solution(name):
             idx -= left
             answer += left
     return answer
+
+# 56
+print(solution("JEROEN"))
